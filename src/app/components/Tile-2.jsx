@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import download from "../assets/images/download.png";
 import Form from "./Form";
-import Tile3 from "./Tile-3";
+import Tile3 from "./Tile";
 
 const Tile2 = ({ handlePreviousStep, step }) => {
   const [selectedImage, setSelectedImage] = useState(null);
