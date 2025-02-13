@@ -28,12 +28,12 @@ const Tile3 = ({ userInfo, selectedImage }) => {
 
       <div className="relative">
         {/* Background Image */}
-        <div className="mx-auto w-full relative">
+        <div className="mx-auto w-full h-full relative">
           <Image
             src={bckgrd}
             layout="responsive"
             width={500}
-            height={100}
+            height={500}
             alt="Background"
             className="object-cover w-full h-[150px] sm:h-[200px]"
           />
