@@ -9,17 +9,21 @@ const TicketSelection = ({ step, handleNextStep, handlePreviousStep }) => {
         {/* Tiles */}
         {step === 1 && (
           <Tile1
+            step={step}
             handleNextStep={handleNextStep}
             handlePreviousStep={handlePreviousStep}
           />
         )}
         {step === 2 && (
           <Tile2
+            step={step}
             handleNextStep={handleNextStep}
             handlePreviousStep={handlePreviousStep}
           />
         )}
-        {step === 3 && <Tile3 handlePreviousStep={handlePreviousStep} />}
+        {step === 3 && (
+          <Tile3 step={step} handlePreviousStep={handlePreviousStep} />
+        )}
       </div>
     </div>
   );

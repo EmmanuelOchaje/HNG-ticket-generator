@@ -11,14 +11,23 @@ const roadRage = Road_Rage({
   subsets: ["latin"],
 });
 
-const Tile3 = ({ userInfo, selectedImage }) => {
+const Tile3 = ({ userInfo, selectedImage, step }) => {
+  const progressWidth = `${(step / 3) * 100}%`;
+
   return (
     <div className="px-4">
       <div className="flex mx-6 justify-between flex-wrap">
         <h2 className="text-3xl sm:text-2xl">Ready!</h2>
         <p className="mt-2 text-sm sm:text-xs">Step 3/3</p>
       </div>
-      <hr className="mx-2 border-[#0E464F] border-[1.5px] my-2" />
+      {/* progress bar */}
+      <div className="w-full h-2 my-4 bg-[#0E464F] rounded-full overflow-hidden">
+        <div
+          className="h-full rounded-2xl bg-[#24A0B5] transition-all duration-300"
+          style={{ width: progressWidth }}
+        ></div>
+      </div>
+      {/* <hr className="mx-2 border-[#0E464F] border-[1.5px] my-2" /> */}
       <h2 className="w-fit mx-auto text-4xl font-semibold text-center">
         Your Ticket is booked!
       </h2>
@@ -28,7 +37,7 @@ const Tile3 = ({ userInfo, selectedImage }) => {
 
       <div className="relative">
         {/* Background Image */}
-        <div className="mx-auto w-full h-full relative">
+        <div className="mx-auto w-full h-full borde relative">
           <Image
             src={bckgrd}
             layout="responsive"

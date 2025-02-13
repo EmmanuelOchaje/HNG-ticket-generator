@@ -5,7 +5,7 @@ import download from "../assets/images/download.png";
 import Form from "./Form";
 import Tile3 from "./Tile-3";
 
-const Tile2 = ({ handlePreviousStep }) => {
+const Tile2 = ({ handlePreviousStep, step }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [userInfo, setUserInfo] = useState({
     name: "",
@@ -14,6 +14,7 @@ const Tile2 = ({ handlePreviousStep }) => {
     ticketsAmount: 1,
   });
   const [showTicketPage, setShowTicketPage] = useState(false);
+  const progressWidth = `${(step / 3) * 100}%`;
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -48,7 +49,14 @@ const Tile2 = ({ handlePreviousStep }) => {
         <h2 className="text-xl sm:text-2xl md:text-3xl">Ticket Details</h2>
         <p className="text-sm sm:text-lg mt-2">Step 2/3</p>
       </div>
-      <hr className="border-[#0E464F] border-[1.5px] my-2" />
+      {/* progress bar */}
+      <div className="w-full h-2 my-4 bg-[#0E464F] rounded-full overflow-hidden">
+        <div
+          className="h-full rounded-2xl bg-[#24A0B5] transition-all duration-300"
+          style={{ width: progressWidth }}
+        ></div>
+      </div>
+      {/* <hr className="border-[#0E464F] border-[1.5px] my-2" /> */}
 
       <div className="bg-[#052228] p-3 sm:p-4 border rounded-2xl border-[#0E464F]">
         <h2 className="text-sm sm:text-base my-2">Upload Profile Photo</h2>

@@ -10,10 +10,11 @@ const roadRage = Road_Rage({
   subsets: ["latin"],
 });
 
-const Tile1 = ({ handleNextStep }) => {
+const Tile1 = ({ handleNextStep, step }) => {
   const [selectedNumber, setSelectedNumber] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedTicket, setSelectedTicket] = useState("Regular");
+  const progressWidth = `${(step / 3) * 100}%`;
 
   const handleSelect = (num) => {
     setSelectedNumber(num);
@@ -41,7 +42,14 @@ const Tile1 = ({ handleNextStep }) => {
         <h2 className="text-xl sm:text-2xl md:text-3xl">Ticket Selection</h2>
         <p className="text-sm sm:text-lg">Step 1/3</p>
       </div>
-      <hr className="border-[#0E464F] border-[1.5px] my-2" />
+      {/* progress bar */}
+      <div className="w-full h-2 my-4 bg-[#0E464F] rounded-full overflow-hidden">
+        <div
+          className="h-full rounded-2xl bg-[#24A0B5] transition-all duration-300"
+          style={{ width: progressWidth }}
+        ></div>
+      </div>
+      {/* <hr className="border-[#0E464F] border-[1.5px] my-2" /> */}
 
       {/* Event Info */}
       <div className="bg border-[#0E464F] rounded-2xl p-3 sm:p-4 text-center">
