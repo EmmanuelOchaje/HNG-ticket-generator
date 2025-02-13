@@ -43,3 +43,14 @@ body {
     ),
     rgba(10, 12, 17, 0.1);
 }
+
+.input {
+  border: 1px solid transparent; /* Transparent border */
+  background-color: transparent; /* Transparent background */
+  outline: none; /* Remove default focus outline */
+}
+
+.input:focus {
+  border: 1px solid transparent; /* Keep border transparent on focus */
+  background-color: transparent; /* Keep background transparent on focus */
+}

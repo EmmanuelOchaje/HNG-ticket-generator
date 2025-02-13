@@ -52,9 +52,9 @@ const Tile2 = ({ handlePreviousStep }) => {
 
       <div className="bg-[#052228] p-3 sm:p-4 border rounded-2xl border-[#0E464F]">
         <h2 className="text-sm sm:text-base my-2">Upload Profile Photo</h2>
-        <div className="bg-[#02191D] p-2 sm:p-3 rounded-xl">
+        <div className="bg-[#02191D] rounded-xl">
           <div
-            className="bg-[#0E464F] w-full max-w-[300px] sm:max-w-[400px] py-10 rounded-xl mx-auto flex flex-col items-center justify-center cursor-pointer"
+            className="bg-[#0E464F] w-[50%] max-w-[300px] sm:max-w-[400px] py-10 rounded-xl mx-auto flex flex-col items-center justify-center cursor-pointer"
             onDragOver={handleDragOver}
             onDrop={handleDrop}
             onClick={() => document.getElementById("fileInput").click()}
