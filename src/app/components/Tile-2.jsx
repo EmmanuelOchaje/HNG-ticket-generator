@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import download from "../assets/images/download.png";
 import Form from "./Form";
-import Tile3 from "./Tile-3"; // Import Tile3
+import Tile3 from "./Tile-3";
 
 const Tile2 = ({ handlePreviousStep }) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -13,7 +13,7 @@ const Tile2 = ({ handlePreviousStep }) => {
     ticketType: "",
     ticketsAmount: 1,
   });
-  const [showTicketPage, setShowTicketPage] = useState(false); // State to control which page is shown
+  const [showTicketPage, setShowTicketPage] = useState(false);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -35,30 +35,26 @@ const Tile2 = ({ handlePreviousStep }) => {
   };
 
   const handleGoToTicket = () => {
-    setShowTicketPage(true); // Show Tile3 when the button is clicked
+    setShowTicketPage(true);
   };
 
-  // If the showTicketPage state is true, render Tile3 with user information
   if (showTicketPage) {
     return <Tile3 userInfo={userInfo} selectedImage={selectedImage} />;
   }
 
   return (
-    <div className="bg-[#08252B] border-[#0E464F] border rounded-2xl p-4">
-      {/* ticket details */}
-      <div className="flex mx-6 justify-between">
-        <h2 className="text-3xl">Ticket Details</h2>
-        <p className="mt-2">Step 2/3</p>
+    <div className="bg-[#08252B] border-[#0E464F] border rounded-2xl p-4 sm:p-6 w-full max-w-[95%] sm:max-w-[500px] mx-auto">
+      <div className="flex flex-col sm:flex-row justify-between items-center">
+        <h2 className="text-xl sm:text-2xl md:text-3xl">Ticket Details</h2>
+        <p className="text-sm sm:text-lg mt-2">Step 2/3</p>
       </div>
-      <hr className="mx-2 border-[#0E464F] border-[1.5px] my-4" />
+      <hr className="border-[#0E464F] border-[1.5px] my-2" />
 
-      <div className="bg-[#052228] p-2 border rounded-2xl border-[#0E464F]">
-        <h2 className="my-2">Upload Profile Photo</h2>
-
-        {/* chat */}
-        <div className="bg-[#02191D] mx-2">
+      <div className="bg-[#052228] p-3 sm:p-4 border rounded-2xl border-[#0E464F]">
+        <h2 className="text-sm sm:text-base my-2">Upload Profile Photo</h2>
+        <div className="bg-[#02191D] p-2 sm:p-3 rounded-xl">
           <div
-            className="bg-[#0E464F] w-[50%] py-10 rounded-xl mx-auto h-[200px] flex flex-col items-center justify-center cursor-pointer"
+            className="bg-[#0E464F] w-full max-w-[300px] sm:max-w-[400px] py-10 rounded-xl mx-auto flex flex-col items-center justify-center cursor-pointer"
             onDragOver={handleDragOver}
             onDrop={handleDrop}
             onClick={() => document.getElementById("fileInput").click()}
@@ -81,7 +77,7 @@ const Tile2 = ({ handlePreviousStep }) => {
                 />
               )}
             </div>
-            <p className="text-center mx-4 text-white">
+            <p className="text-center mx-4 text-white text-xs sm:text-sm">
               Drag & drop or click to upload
             </p>
             <input
@@ -94,10 +90,7 @@ const Tile2 = ({ handlePreviousStep }) => {
           </div>
         </div>
       </div>
-
-      <hr className="mx-2 border-[#0E464F] border-[1.5px] my-2" />
-
-      {/* form */}
+      <hr className="border-[#0E464F] border-[1.5px] my-4" />
       <Form
         setUserInfo={setUserInfo}
         handlePreviousStep={handlePreviousStep}

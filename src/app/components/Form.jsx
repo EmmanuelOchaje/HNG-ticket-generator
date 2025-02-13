@@ -74,7 +74,7 @@ const Form = ({ handleGoToTicket, handlePreviousStep, setUserInfo }) => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full border p-2 rounded-md bg-transparent border-gray-400"
+            className="w-full border p-2 rounded-md bg-transparent border-[#24A0B5]"
             placeholder="Name"
           />
           {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
@@ -83,7 +83,7 @@ const Form = ({ handleGoToTicket, handlePreviousStep, setUserInfo }) => {
         {/* Email Input */}
         <div>
           <label className="block font-medium">Enter your email</label>
-          <div className="flex items-center border p-2 rounded-md bg-transparent border-gray-400">
+          <div className="flex items-center border p-2 rounded-md bg-transparent border-[#24A0B5]">
             <Image src={envelope} width={20} height={20} alt="Envelope Icon" />
             <input
               type="email"
@@ -106,7 +106,7 @@ const Form = ({ handleGoToTicket, handlePreviousStep, setUserInfo }) => {
             name="shortInfo"
             value={formData.shortInfo}
             onChange={handleChange}
-            className="w-full border p-2 rounded-md bg-transparent border-gray-400"
+            className="w-full border p-2 rounded-md bg-transparent border-[#24A0B5]"
             placeholder="Provide a short description"
             rows="3"
           />
@@ -126,7 +126,7 @@ const Form = ({ handleGoToTicket, handlePreviousStep, setUserInfo }) => {
           </button>
           <button
             type="submit"
-            className="text-white bg-blue-500 p-2 rounded-md w-full border border-blue-700"
+            className="text-white bg-[#24A0B5] p-2 rounded-md w-full"
           >
             Go to my ticket
           </button>

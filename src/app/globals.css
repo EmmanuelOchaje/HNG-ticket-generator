@@ -14,9 +14,25 @@ body {
   color: white;
 }
 
-.header-text {
-  color: transparent;
-  -webkit-text-stroke: 0.5px white;
+/* @font-face {
+  font-family: "JejuMyeongjo";
+  src: url("/fonts/JejuMyeongjo.woff2") format("woff2"),
+    url("/fonts/JejuMyeongjo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+} */
+
+body {
+  font-family: "JejuMyeongjo", serif;
+}
+
+.header {
+  font-family: "Road Rage";
+}
+
+@font-face {
+  font-family: "JejuMyeongjo";
+  src: url("/public/fonts/JejuMyeongjo-Regular.ttf");
 }
 
 .bg {

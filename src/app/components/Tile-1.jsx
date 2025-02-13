@@ -1,26 +1,29 @@
 "use client";
+import { Road_Rage } from "next/font/google";
 import Image from "next/image";
 import React, { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
+
+const roadRage = Road_Rage({
+  weight: "400",
+  variable: "--road-rage",
+  subsets: ["latin"],
+});
 
 const Tile1 = ({ handleNextStep }) => {
   const [selectedNumber, setSelectedNumber] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedTicket, setSelectedTicket] = useState("Regular");
-  const [isFormValid, setIsFormValid] = useState(false);
 
   const handleSelect = (num) => {
     setSelectedNumber(num);
-    setIsOpen(false); // Close dropdown after selection
+    setIsOpen(false);
   };
 
   const handleSubmit = () => {
-    // Basic validation
     if (selectedTicket && selectedNumber > 0) {
-      setIsFormValid(true);
-      handleNextStep(); // Trigger the next step
+      handleNextStep();
     } else {
-      setIsFormValid(false);
       alert("Please select a ticket type and number.");
     }
   };
@@ -32,51 +35,54 @@ const Tile1 = ({ handleNextStep }) => {
   ];
 
   return (
-    <div className="bg-[#08252B] border-[#0E464F] p-4 border rounded-2xl">
-      {/* ticket select */}
-      <div className="flex mx-6 justify-between">
-        <h2 className="text-3xl">Ticket Selection</h2>
-        <p className="mt-2">Step 1/3</p>
+    <div className="bg-[#08252B] border-[#0E464F] p-4 sm:p-6 border rounded-2xl w-full max-w-[95%] sm:max-w-[500px] mx-auto">
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row justify-between items-center">
+        <h2 className="text-xl sm:text-2xl md:text-3xl">Ticket Selection</h2>
+        <p className="text-sm sm:text-lg">Step 1/3</p>
       </div>
-      <hr className="mx-2 border-[#0E464F] border-[1.5px] my-2" />
-      {/* header */}
-      <div className="bg-[#0c333b] border-[#0E464F] rounded-2xl p-2 border">
-        <h2 className="text-3xl w-fit mx-auto my-2 font-semibold">
-          Techember Fest "25
+      <hr className="border-[#0E464F] border-[1.5px] my-2" />
+
+      {/* Event Info */}
+      <div className="bg border-[#0E464F] rounded-2xl p-3 sm:p-4 text-center">
+        <h2
+          className={`text-xl sm:text-3xl md:text-5xl ${roadRage.className} font-semibold`}
+        >
+          Techember Fest '25
         </h2>
-        <p className="w-fit mx-auto max-w-[300px] my-2 text-center">
+        <p className="text-xs sm:text-sm mt-2">
           Join us for an unforgettable experience at [location]! Secure a spot
           today.
         </p>
-        <p className="w-fit mx-auto max-w-[300px] text-center">
+        <p className="text-xs sm:text-sm mt-1">
           📍[Event Location] || March 15th, 2025
         </p>
       </div>
-      <hr className="mx-2 border-[#0E464F] border-[1.5px] my-4" />
+      <hr className="border-[#0E464F] border-[1.5px] my-4" />
 
-      <p>Select Ticket Type: </p>
-      {/* ticket type */}
-      <div className="border rounded-2xl bg-[#052228] flex flex-col md:flex-row border-[#0E464F] p-2">
+      {/* Ticket Selection */}
+      <p className="text-sm sm:text-base">Select Ticket Type:</p>
+      <div className="flex flex-col sm:flex-row gap-3 mt-2">
         {tickets.map((ticket) => (
           <div
             key={ticket.type}
-            className={`p-2 cursor-pointer w-full border-[#0E464F] m-2 rounded-xl border text-center ${
+            className={`p-3 cursor-pointer flex-1 text-center border border-[#0E464F] rounded-xl transition-all ${
               selectedTicket === ticket.type
                 ? "bg-[#0E464F] text-white"
                 : "bg-transparent"
             }`}
             onClick={() => setSelectedTicket(ticket.type)}
           >
-            <p className="font-medium text-xl rounded-lg">{ticket.price}</p>
-            <p>{ticket.type} Access</p>
-            <p className="text-[12px]">20 Left!</p>
+            <p className="text-base sm:text-lg font-medium">{ticket.price}</p>
+            <p className="text-xs sm:text-sm">{ticket.type} Access</p>
+            <p className="text-[10px] sm:text-xs">20 Left!</p>
           </div>
         ))}
       </div>
 
-      {/* Number of tickets */}
-      <div className="relative">
-        <p>Number of Tickets</p>
+      {/* Number of Tickets */}
+      <div className="relative mt-4">
+        <p className="text-sm sm:text-base">Number of Tickets</p>
         <div
           className="flex justify-between items-center border border-[#0E464F] rounded-md p-2 cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
@@ -91,7 +97,7 @@ const Tile1 = ({ handleNextStep }) => {
             {[1, 2, 3, 4, 5].map((num) => (
               <div
                 key={num}
-                className="p-2 cursor-pointer"
+                className="p-2 cursor-pointer hover:bg-[#0E464F] text-center"
                 onClick={() => handleSelect(num)}
               >
                 {num}
@@ -101,13 +107,13 @@ const Tile1 = ({ handleNextStep }) => {
         )}
       </div>
 
-      {/* Next button */}
-      <div className="md:flex gap-6 gap-y-4 borde border-[#0E464F] my-4 py- rounded-xl">
-        <button className="p-2 rounded-xl w-full my-1 border border-[#0E464F] px-10">
+      {/* Action Buttons */}
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 mt-4">
+        <button className="p-2 rounded-xl w-full border border-[#0E464F]">
           Cancel
         </button>
         <button
-          className="p-2 rounded-xl border w-full my-1 border-[#0E464F] bg-[#24A0B5] px-10"
+          className="p-2 rounded-xl w-full border border-[#0E464F] bg-[#24A0B5]"
           onClick={handleSubmit}
         >
           Next

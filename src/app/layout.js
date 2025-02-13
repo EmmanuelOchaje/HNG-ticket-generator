@@ -1,10 +1,10 @@
 import { Afacad, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const afacad = Afacad({
+/* const afacad = Afacad({
   variable: "--afacad",
   subsets: ["latin"],
-});
+}); */
 
 export const metadata = {
   title: "Create Next App",
@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={afacad.className}>{children}</body>
+      <body className={""}>{children}</body>
     </html>
   );
 }
