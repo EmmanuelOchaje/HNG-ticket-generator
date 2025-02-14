@@ -30,7 +30,7 @@ const Tile3 = ({ userInfo, selectedImage, step }) => {
       </p>
 
       {/* Background Image */}
-      <div className="bg-image p-4 pt-1">
+      <div className="bg-image p-4 pt-4n">
         {/* Ticket Details Overlay */}
         <div className="border border-[#12464E] w-fit mx-auto mt-3 m-20 rounded-2xl p-2">
           <div className="p-1">

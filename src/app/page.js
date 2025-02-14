@@ -14,7 +14,9 @@ export default function Home() {
   return (
     <div className="">
       <Navbar />
-      <TicketSelection step={step} handleNextStep={handleNextStep} />
+      <div className="py-[120px]">
+        <TicketSelection step={step} handleNextStep={handleNextStep} />
+      </div>
     </div>
   );
 }
