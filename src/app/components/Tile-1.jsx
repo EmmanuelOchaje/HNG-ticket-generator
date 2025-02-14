@@ -4,12 +4,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
-const roadRage = Road_Rage({
-  weight: "400",
-  variable: "--road-rage",
-  subsets: ["latin"],
-});
-
 const Tile1 = ({ handleNextStep, step }) => {
   const [selectedNumber, setSelectedNumber] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
@@ -52,13 +46,11 @@ const Tile1 = ({ handleNextStep, step }) => {
       {/* <hr className="border-[#0E464F] border-[1.5px] my-2" /> */}
 
       {/* Event Info */}
-      <div className="bg border-[#0E464F] rounded-2xl p-3 sm:p-4 text-center">
-        <h2
-          className={`text-xl sm:text-3xl md:text-5xl ${roadRage.className} font-semibold`}
-        >
-          Techember Fest '25
+      <div className="bg border-[#0E464F] font-road-rage rounded-2xl p-3 sm:p-4 text-center">
+        <h2 className={`text-xl sm:text-3xl md:text-5xl font-medium`}>
+          <span className={""}>Techember Fest '25</span>
         </h2>
-        <p className="text-xs sm:text-sm mt-2">
+        <p className="text-xs sm:text-sm mt-2 ">
           Join us for an unforgettable experience at [location]! Secure a spot
           today.
         </p>

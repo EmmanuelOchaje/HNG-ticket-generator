@@ -14,18 +14,6 @@ body {
   color: white;
 }
 
-/* @font-face {
-  font-family: "JejuMyeongjo";
-  src: url("/fonts/JejuMyeongjo.woff2") format("woff2"),
-    url("/fonts/JejuMyeongjo.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-} */
-
-body {
-  font-family: "JejuMyeongjo", serif;
-}
-
 .header {
   font-family: "Road Rage";
 }
@@ -53,4 +41,11 @@ body {
 .input:focus {
   border: 1px solid transparent; /* Keep border transparent on focus */
   background-color: transparent; /* Keep background transparent on focus */
+}
+.bg-image {
+  background-image: url("./assets/images/bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: auto;
 }

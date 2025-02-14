@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../assets/images/logo.png";
 import ticz from "../assets/images/ticz.png";
+import arrow from "../assets/images/arrow.png";
 
 const Navbar = () => {
   return (
@@ -24,7 +25,9 @@ const Navbar = () => {
             <Link href="/">Events</Link>
           </li>
           <li>
-            <Link href="/">My Tickets</Link>
+            <Link href="/" className="font-jejumyeongjo">
+              My Tickets
+            </Link>
           </li>
           <li>
             <Link href="/">About Project</Link>
@@ -32,8 +35,9 @@ const Navbar = () => {
         </ul>
 
         {/* Button (Always Visible) */}
-        <button className="bg-white text-black p-2 md:p-3 w-[100px] md:w-[150px] rounded-xl text-sm md:text-base">
+        <button className="bg-white text-black p-2 flex md:p-3 w-[100px] md:w-[150px] rounded-xl text-sm md:text-base">
           MY TICKETS
+          <Image src={arrow} className="my-auto ml-2" width={20} height={20} />
         </button>
       </nav>
     </div>

@@ -7,6 +7,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        jejumyeongjo: ["JejuMyeongjo", "serif"],
+        "road-rage": ["var(--road-rage)", "sans-serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
